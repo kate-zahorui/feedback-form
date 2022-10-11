@@ -1,10 +1,19 @@
 import { SocLinks } from '../';
+import { StyledFooter, SvgLeft, SvgRight } from './Footer.styled';
+
+import svg from '../../images/sprite.svg';
 
 const Footer = () => {
   return (
-    <footer>
+    <StyledFooter>
+      <SvgLeft width="290" height="290">
+        <use href={`${svg}#footer-pink-cartoon`}></use>
+      </SvgLeft>
       <SocLinks />
-    </footer>
+      <SvgRight width="243" height="172">
+        <use href={`${svg}#footer-group-cartoon`}></use>
+      </SvgRight>
+    </StyledFooter>
   );
 };
 

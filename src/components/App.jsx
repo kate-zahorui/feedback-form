@@ -1,11 +1,12 @@
 import { Footer, Main } from './';
+import { StyledApp } from './App.styled';
 
 const App = () => {
   return (
-    <div className="App">
+    <StyledApp>
       <Main />
       <Footer />
-    </div>
+    </StyledApp>
   );
 };
 

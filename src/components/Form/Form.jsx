@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addFeedback } from '../../redux/feedback/feedbackOperations';
 
+import {
+  StyledForm,
+  Label,
+  Input,
+  StyledButton,
+  Textarea,
+} from './Form.styled';
+
 const Form = () => {
   const dispatch = useDispatch();
 
@@ -40,9 +48,9 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="">
-        <input
+    <StyledForm name="feedback" onSubmit={handleSubmit}>
+      <Label htmlFor="">
+        <Input
           type="text"
           name="name"
           placeholder="Your name*"
@@ -50,9 +58,9 @@ const Form = () => {
           value={name}
           onChange={handleInputChange}
         />
-      </label>
-      <label htmlFor="">
-        <input
+      </Label>
+      <Label htmlFor="">
+        <Input
           type="email"
           name="email"
           placeholder="Your e-mail*"
@@ -60,19 +68,19 @@ const Form = () => {
           value={email}
           onChange={handleInputChange}
         />
-      </label>
-      <label htmlFor="">
-        <input
-          type="text"
+      </Label>
+      <Label htmlFor="">
+        <Textarea
           name="message"
           placeholder="Your message*"
+          rows="3"
           required
           value={message}
           onChange={handleInputChange}
         />
-      </label>
-      <button type="submit">Send message</button>
-    </form>
+      </Label>
+      <StyledButton type="submit">Send message</StyledButton>
+    </StyledForm>
   );
 };
 
