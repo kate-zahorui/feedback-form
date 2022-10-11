@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addFeedback } from '../../redux/feedback/feedbackOperations';
 
 const Form = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -24,8 +28,19 @@ const Form = () => {
     }
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const newFeedback = { name, email, message };
+    dispatch(addFeedback(newFeedback));
+
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="">
         <input
           type="text"
