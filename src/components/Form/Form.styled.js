@@ -4,10 +4,12 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 `;
 
 export const Label = styled.label`
   margin-bottom: 8px;
+  width: 100%;
   &:last-of-type {
     margin-bottom: 25px;
   }
@@ -15,7 +17,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   padding: 30px 45px;
-  width: 550px;
+  width: 100%;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   /* font */
@@ -31,7 +33,7 @@ export const Textarea = styled.textarea`
   resize: none;
   margin: 0;
   padding: 30px 45px;
-  width: 550px;
+  width: 100%;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   /* font */

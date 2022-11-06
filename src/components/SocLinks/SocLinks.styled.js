@@ -1,8 +1,24 @@
 import styled from 'styled-components';
+import { device } from '../../device';
 
 export const List = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @media ${device.mobile} {
+    justify-content: flex-start;
+    width: 430px;
+    margin: 0 auto;
+  }
+
+  @media ${device.tablet} {
+    width: 550px;
+  }
+
+  @media ${device.laptop} {
+    width: 100%;
+  }
 `;
 
 export const Item = styled.li`

@@ -1,25 +1,51 @@
 import styled from 'styled-components';
+import { device } from '../../device';
+import background from '../../images/clouds-background.png';
 
 export const StyledMain = styled.main`
   flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+
   position: relative;
   overflow: hidden;
-  padding: 0 0 5px 145px;
-
-  background-image: url('../../images/clouds-background.png');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  padding: 0 0 5px 0;
+  /* background */
+  background-image: url(${background});
+  background-repeat: repeat-y;
+  background-position: 0 20px;
   background-size: contain;
+
+  @media ${device.desktop} {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 0 5px 145px;
+    /* background */
+    background-repeat: no-repeat;
+    background-position: 50% 20px;
+    background-size: cover;
+  }
 `;
 
-export const Container = styled.section`
-  margin-right: 110px;
-  padding: 150px 0 0 0;
-  z-index: 1;
-  /* padding: 180px 0 0 145px; */
+export const FormContainer = styled.section`
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 150px 10px 0 10px;
+  width: 100%;
+
+  @media ${device.mobile} {
+    margin-bottom: 0;
+    width: 450px;
+  }
+
+  @media ${device.tablet} {
+    width: 550px;
+    padding: 150px 0 0 0;
+  }
+
+  @media ${device.desktop} {
+    margin-right: 110px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -31,16 +57,22 @@ export const Title = styled.h1`
   line-height: 1.3;
 `;
 
-export const Image = styled.img`
-  width: 620px;
+export const MapContainer = styled.section`
+  position: relative;
+  width: 280px;
+  margin-left: auto;
+
+  @media ${device.mobile} {
+    width: 400px;
+  }
+
+  @media ${device.tablet} {
+    width: 620px;
+  }
 `;
 
-export const ImageBackground = styled.img`
-  position: absolute;
+export const Image = styled.img`
   width: 100%;
-  height: auto;
-  left: 0;
-  top: 20px;
 `;
 
 const Svg = styled.svg`
@@ -53,11 +85,37 @@ export const SvgLeft = styled(Svg)`
 `;
 
 export const SvgRight = styled(Svg)`
-  top: 560px;
-  right: 390px;
+  top: 190px;
+  right: 90px;
+  scale: 0.4;
+
+  @media ${device.mobile} {
+    top: 310px;
+    right: 210px;
+    scale: 0.7;
+  }
+
+  @media ${device.tablet} {
+    top: 560px;
+    right: 390px;
+    scale: 1;
+  }
 `;
 
 export const SvgRightUp = styled(Svg)`
-  top: 515px;
-  right: 550px;
+  top: 225px;
+  right: 205px;
+  scale: 0.4;
+
+  @media ${device.mobile} {
+    top: 310px;
+    right: 340px;
+    scale: 0.7;
+  }
+
+  @media ${device.tablet} {
+    top: 515px;
+    right: 550px;
+    scale: 1;
+  }
 `;
